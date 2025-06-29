@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpha Chat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    html, body, iframe {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      border: none;
+    html, body {
+      margin: 0; padding: 0; height: 100%; width: 100%;
+      font-size: 17px;
+    }
+    #vf-container {
+      width: 100vw; height: 100vh;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://creator.voiceflow.com/project/685bd86d00cd24f6c102d2a2/embed" frameborder="0"></iframe>
+  <div id="vf-container"></div>
+  <script type="text/javascript">
+    const s = document.createElement("script");
+    s.src = "https://cdn.voiceflow.com/chat/widget/bundle.mjs";
+    s.type = "text/javascript";
+    s.onload = () => {
+      window.voiceflow.chat.load({
+        verify: { projectID: "685bd86d00cd24f6c102da22" },
+        versionID: "production",
+        url: "https://general-runtime.voiceflow.com",
+        assistant: {
+          renderMode: "embed",
+          container: "#vf-container"
+        }
+      });
+    };
+    document.head.appendChild(s);
+  </script>
 </body>
 </html>
