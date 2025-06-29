@@ -1,54 +1,20 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Alpha Chat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    html, body {
+    html, body, iframe {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
-      font-size: 17px;
-      background-color: #ffffff;
-    }
-
-    #vf-container {
-      height: 100vh;
-      width: 100vw;
-    }
-
-    .vfrc-message-text,
-    .vfrc-input input,
-    .vfrc-button,
-    .vfrc-title,
-    .vfrc-subtitle {
-      font-size: 1.05em !important;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <div id="vf-container"></div>
-
-  <script type="text/javascript">
-    (function (d, t) {
-      const s = d.createElement(t);
-      s.src = "https://cdn.voiceflow.com/chat/widget/bundle.mjs";
-      s.type = "text/javascript";
-      s.onload = function () {
-        window.voiceflow.chat.load({
-          verify: { projectID: "685bd86d00cd24f6c102d2a2" },
-          versionID: "production",
-          url: "https://general-runtime.voiceflow.com",
-          assistant: {
-            renderMode: "embed",
-            container: "#vf-container"
-          }
-        });
-      };
-      d.head.appendChild(s);
-    })(document, "script");
-  </script>
+  <iframe src="https://creator.voiceflow.com/project/685bd86d00cd24f6c102d2a2/embed" frameborder="0"></iframe>
 </body>
 </html>
