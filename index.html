@@ -13,6 +13,7 @@
       overflow: hidden;
       background-color: #ffffff;
       touch-action: manipulation;
+      direction: rtl;
     }
     #vf-container {
       position: fixed;
@@ -22,17 +23,24 @@
       height: 100vh;
       z-index: 9999;
     }
+    #error-msg {
+      display: none;
+      color: red;
+      text-align: center;
+      margin-top: 40px;
+      font-family: sans-serif;
+    }
   </style>
 </head>
 <body>
   <div id="vf-container"></div>
+  <div id="error-msg">שגיאה בטעינת הצ'אט. נסה לרענן את הדף או לבדוק את החיבור לרשת.</div>
 
-  <script type="text/javascript">
-    (function(d, t) {
-      const s = d.createElement(t);
-      s.src = "https://cdn.voiceflow.com/chat/widget/bundle.mjs";
-      s.type = "text/javascript";
-      s.onload = function () {
+  <script type="module">
+    const script = document.createElement("script");
+    script.src = "https://cdn.voiceflow.com/chat/widget/bundle.mjs";
+    script.onload = function () {
+      try {
         window.voiceflow.chat.load({
           verify: { projectID: "685bd86d00cd24f6c102d2a2" },
           versionID: "production",
@@ -42,9 +50,16 @@
             container: "#vf-container"
           }
         });
-      };
-      d.head.appendChild(s);
-    })(document, "script");
+      } catch (e) {
+        document.getElementById("error-msg").style.display = "block";
+        console.error("Voiceflow load error:", e);
+      }
+    };
+    script.onerror = function () {
+      document.getElementById("error-msg").style.display = "block";
+      console.error("Failed to load Voiceflow widget.");
+    };
+    document.head.appendChild(script);
   </script>
 </body>
 </html>
