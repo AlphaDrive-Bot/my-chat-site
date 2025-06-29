@@ -6,19 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
     :root {
-      --primary-color: #0a1d40;
-      --accent-color: #123164;
-      --text-color: #ffffff;
-      --font-size: 18px;
+      --deep-blue: #0a1d40;
     }
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--primary-color);
+      background-color: var(--deep-blue);
       font-family: "Segoe UI", sans-serif;
-      font-size: var(--font-size);
+      font-size: 18px;
       direction: rtl;
       touch-action: manipulation;
       overflow: hidden;
@@ -28,18 +25,18 @@
       top: 0;
       width: 100%;
       height: 64px;
-      background: linear-gradient(to bottom, rgba(10, 29, 64, 0.9), transparent);
+      background-color: var(--deep-blue);
       display: flex;
       align-items: center;
       padding: 0 16px;
       z-index: 10000;
+      color: white;
     }
     #logo {
       height: 46px;
       margin-inline-start: 4px;
     }
     #title {
-      color: var(--text-color);
       font-size: 20px;
       font-weight: 500;
       margin-right: 12px;
@@ -60,17 +57,22 @@
       text-align: center;
       padding-top: 40px;
     }
+
+    /* התאמת צבעי בועות בצ'אט (אם Voiceflow מאפשר החלה חיצונית) */
+    ::part(message-container) {
+      --bubble-bg-color: var(--deep-blue);
+      --text-color: #fff;
+    }
   </style>
 </head>
 <body>
 
   <div id="header">
-    <img id="logo" src="/path/to/your-logo.jpeg" alt="Alpha Logo" />
     <div id="title">Alpha-Drive Agent</div>
   </div>
 
   <div id="vf-container"></div>
-  <div id="error-msg">⚠️ שגיאה בטעינת הצ'אט. בדוק חיבור ואחזור לטעינה.</div>
+  <div id="error-msg">⚠️ שגיאה בטעינת הצ'אט.</div>
 
   <script type="text/javascript">
     (function(d, t) {
