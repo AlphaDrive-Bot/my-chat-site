@@ -19,7 +19,6 @@
       width: 100vw;
     }
 
-    /* הגדלת טקסט */
     .vfrc-message-text,
     .vfrc-input input,
     .vfrc-button,
@@ -35,11 +34,11 @@
   <script type="text/javascript">
     (function (d, t) {
       const s = d.createElement(t);
-      s.src = "https://cdn.voiceflow.com/chat/widget/bundle.mjs"; // ← זה הקובץ הנכון!
+      s.src = "https://cdn.voiceflow.com/chat/widget/bundle.mjs";
       s.type = "text/javascript";
       s.onload = function () {
         window.voiceflow.chat.load({
-          verify: { projectID: "685bd86d00cd24f6c102d2a2" },
+          verify: { projectID: "685bd86d00cd24f6c102d2a2" }, // ← שים לב: זה ה-ID התקני, לא "da22"
           versionID: "production",
           url: "https://general-runtime.voiceflow.com",
           assistant: {
