@@ -10,8 +10,8 @@
       padding: 0;
       height: 100%;
       width: 100%;
-      background-color: #ffffff;
       font-size: 17px;
+      background-color: #ffffff;
     }
 
     #vf-container {
@@ -19,6 +19,7 @@
       width: 100vw;
     }
 
+    /* הגדלת טקסט */
     .vfrc-message-text,
     .vfrc-input input,
     .vfrc-button,
@@ -34,11 +35,11 @@
   <script type="text/javascript">
     (function (d, t) {
       const s = d.createElement(t);
-      s.src = "https://cdn.voiceflow.com/chat/widget/bundle.mjs";
+      s.src = "https://cdn.voiceflow.com/chat/widget/bundle.mjs"; // ← זה הקובץ הנכון!
       s.type = "text/javascript";
       s.onload = function () {
         window.voiceflow.chat.load({
-          verify: { projectID: "685bd86d00cd24f6c102d2a2" }, // ← נכון!
+          verify: { projectID: "685bd86d00cd24f6c102d2a2" },
           versionID: "production",
           url: "https://general-runtime.voiceflow.com",
           assistant: {
