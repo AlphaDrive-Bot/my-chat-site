@@ -13,42 +13,22 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--deep-blue);
       font-family: "Segoe UI", sans-serif;
       font-size: 18px;
       direction: rtl;
-      touch-action: manipulation;
-      overflow: hidden;
-    }
-    #header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 64px;
       background-color: var(--deep-blue);
-      display: flex;
-      align-items: center;
-      padding: 0 16px;
-      z-index: 10000;
       color: white;
-    }
-    #logo {
-      height: 46px;
-      margin-inline-start: 4px;
-    }
-    #title {
-      font-size: 20px;
-      font-weight: 500;
-      margin-right: 12px;
+      overflow: hidden;
+      touch-action: manipulation;
     }
     #vf-container {
       position: absolute;
-      top: 64px;
+      top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       width: 100%;
-      height: calc(100% - 64px);
+      height: 100%;
       z-index: 9999;
     }
     #error-msg {
@@ -58,7 +38,7 @@
       padding-top: 40px;
     }
 
-    /* התאמת צבעי בועות בצ'אט (אם Voiceflow מאפשר החלה חיצונית) */
+    /* נסיון לצבוע את בועות הצ'אט (לא תמיד עובד תלוי במבנה Voiceflow) */
     ::part(message-container) {
       --bubble-bg-color: var(--deep-blue);
       --text-color: #fff;
@@ -66,10 +46,6 @@
   </style>
 </head>
 <body>
-
-  <div id="header">
-    <div id="title">Alpha-Drive Agent</div>
-  </div>
 
   <div id="vf-container"></div>
   <div id="error-msg">⚠️ שגיאה בטעינת הצ'אט.</div>
