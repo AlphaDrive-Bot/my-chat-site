@@ -1,16 +1,48 @@
-<script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '685bd86d00cd24f6c102da22' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production',
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          }
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alpha Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #ffffff;
+    }
+    #vf-chat-fullscreen {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="vf-chat-fullscreen"></div>
+
+  <script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '685bd86d00cd24f6c102da22' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            assistant: {
+              renderMode: "embed",
+              container: "#vf-chat-fullscreen"
+            },
+            voice: {
+              url: "https://runtime-api.voiceflow.com"
+            }
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+</body>
+</html>
