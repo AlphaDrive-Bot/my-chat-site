@@ -11,7 +11,7 @@
       height: 100%;
       width: 100%;
       background-color: #ffffff;
-      font-size: 17px; /* הגדלה עדינה של כל הטקסטים */
+      font-size: 17px;
     }
 
     #vf-container {
@@ -19,7 +19,6 @@
       width: 100vw;
     }
 
-    /* הגדלה סלקטיבית – טקסט בצ'אט בלבד */
     .vfrc-message-text,
     .vfrc-input input,
     .vfrc-button,
@@ -39,7 +38,7 @@
       s.type = "text/javascript";
       s.onload = function () {
         window.voiceflow.chat.load({
-          verify: { projectID: "685bd86d00cd24f6c102da22" },
+          verify: { projectID: "685bd86d00cd24f6c102d2a2" }, // ← נכון!
           versionID: "production",
           url: "https://general-runtime.voiceflow.com",
           assistant: {
