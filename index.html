@@ -1,64 +1,20 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <title>אלפא דרייב - סוכן דיגיטלי</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #f3f6fa;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-    }
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 30px 20px;
-    }
-    h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    p {
-      margin: 10px 0 0;
-      font-size: 16px;
-    }
-    main {
-      padding: 40px 20px;
-    }
-    #vf-chat {
-      max-width: 480px;
-      margin: 40px auto;
-      border-radius: 12px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>ברוך הבא לאתר אלפא דרייב</h1>
-    <p>הסוכן הדיגיטלי שלנו כאן לעזור – בכל שאלה!</p>
-  </header>
-
-  <main>
-    <div id="vf-chat"></div>
-  </main>
-
-  <!-- הטמעת הסוכן כצ'אט קבוע -->
-  <script type="text/javascript">
-    (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: "63d68bdb0aacd2dfc6102d22" }, // החלף אם יש לך ID אחר
-          url: "https://general-runtime.voiceflow.com",
-          versionID: "production",
-          assistant: {
-            renderMode: "embed",
-            container: "#vf-chat"
-          }
-        });
-      };
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-      v.type = "text/javascript";
+<script type="text/javascript">
+  (function (d, t) {
+    var v = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    v.onload = function () {
+      window.voiceflow.chat.load({
+        verify: { projectID: "63d68bdb0aacd2dfc6102d22" },
+        url: "https://general-runtime.voiceflow.com",
+        versionID: "production",
+        assistant: {
+          renderMode: "embed",
+          container: "#vf-chat"
+        }
+      });
+    };
+    v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode.insertBefore(v, s);
+  })(document, "script");
+</script>
